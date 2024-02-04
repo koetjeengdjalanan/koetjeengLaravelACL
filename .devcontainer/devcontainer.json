@@ -1,0 +1,67 @@
+{
+    "name": "koetjeengLaravelACL-DevContainers",
+    "workspaceFolder": "/var/www/html/",
+    "service": "koetjeengLaravelACL",
+    "dockerComposeFile": "./docker-compose.yaml",
+    "forwardPorts": [21181],
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "terminal.integrated.profiles.linux": {
+                    "bash": { "path": "/bin/bash" }
+                }
+            },
+            "extensions": [
+                "devsense.composer-php-vscode",
+                "devsense.phptools-vscode",
+                "devsense.profiler-php-vscode",
+                "github.vscode-pull-request-github",
+                "ms-azuretools.vscode-docker",
+                "ms-vscode-remote.remote-containers",
+                "ms-vscode-remote.remote-ssh",
+                "ms-vscode-remote.remote-ssh-edit",
+                "ms-vscode-remote.remote-wsl",
+                "ms-vscode-remote.vscode-remote-extensionpack",
+                "ms-vscode.remote-explorer",
+                "ms-vscode.remote-server",
+                "pkief.material-icon-theme",
+                "amiralizadeh9480.laravel-extra-intellisense",
+                "austenc.laravel-blade-spacer",
+                "bmewburn.vscode-intelephense-client",
+                "codingyu.laravel-goto-view",
+                "devsense.composer-php-vscode",
+                "devsense.intelli-php-vscode",
+                "devsense.phptools-vscode",
+                "devsense.profiler-php-vscode",
+                "eamodio.gitlens",
+                "editorconfig.editorconfig",
+                "esbenp.prettier-vscode",
+                "georgykurian.laravel-ide-helper",
+                "github.vscode-pull-request-github",
+                "glitchbl.laravel-create-view",
+                "ihunte.laravel-blade-wrapper",
+                "kokororin.vscode-phpfmt",
+                "mehedidracula.php-namespace-resolver",
+                "mikestead.dotenv",
+                "mohamedbenhida.laravel-intellisense",
+                "mrchetan.phpstorm-parameter-hints-in-vscode",
+                "naoray.laravel-goto-components",
+                "neilbrayfield.php-docblocker",
+                "onecentlin.laravel-blade",
+                "onecentlin.laravel-extension-pack",
+                "onecentlin.laravel5-snippets",
+                "pgl.laravel-jump-controller",
+                "ritwickdey.liveserver",
+                "ryannaddy.laravel-artisan",
+                "shashraf.laravel-sail",
+                "shufo.vscode-blade-formatter",
+                "streetsidesoftware.code-spell-checker",
+                "temokatha.laravel-l5-swagger-snippets",
+                "xdebug.php-debug",
+                "xdebug.php-pack",
+                "zobo.php-intellisense"
+            ]
+        }
+    }
+}

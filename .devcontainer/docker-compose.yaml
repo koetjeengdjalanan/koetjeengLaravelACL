@@ -1,0 +1,58 @@
+services:
+  koetjeengLaravelACL:
+    hostname: koetjeengLaravelACL
+    container_name: koetjeengLaravelACL
+    image: koetjeeng/laravel-dev:8.1-apache
+    volumes:
+      - ../:/var/www/html:rw
+    ports:
+      - '21180:21180'
+    environment:
+      - APP_PORT=21180
+      - UID=1001
+    networks:
+      - koetjeengLaravelACLNetwork
+    restart: unless-stopped
+    depends_on:
+      - rediskoetjeengLaravelACL
+
+  rediskoetjeengLaravelACL:
+    hostname: rediskoetjeengLaravelACL
+    container_name: rediskoetjeengLaravelACL
+    image: redis:alpine3.16
+    ports:
+      - '21179:6379'
+    volumes:
+      - redisVolumes:/data
+    networks:
+      - koetjeengLaravelACLNetwork
+    restart: unless-stopped
+    depends_on:
+      - dbkoetjeengLaravelACL
+
+  dbkoetjeengLaravelACL:
+    hostname: dbkoetjeengLaravelACL
+    container_name: dbkoetjeengLaravelACL
+    image: postgres:14-alpine
+    ports:
+      - '21132:5432'
+    environment:
+      - POSTGRES_PASSWORD=testing123
+      - POSTGRES_USER=admin123
+      - POSTGRES_DB=laravel
+    volumes:
+      - dbVolumes:/var/lib/postgresql/data
+    networks:
+      - koetjeengLaravelACLNetwork
+    restart: unless-stopped
+
+networks:
+  koetjeengLaravelACLNetwork:
+    name: koetjeengLaravelACLNetwork
+    driver: bridge
+
+volumes:
+  dbVolumes:
+    driver: local
+  redisVolumes:
+    driver: local
